@@ -46,73 +46,74 @@ export default function Hero() {
 
         {/* Circuit board SVG */}
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100" preserveAspectRatio="none"
           style={{ opacity: isDark ? 0.35 : 0.2 }}>
           <defs>
             <filter id="glow">
-              <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+              <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
               <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
             <filter id="glow-strong">
-              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feGaussianBlur stdDeviation="0.8" result="coloredBlur"/>
               <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
             </filter>
             <style>{`
-              @keyframes dash1 { from { stroke-dashoffset: 400; } to { stroke-dashoffset: 0; } }
-              @keyframes dash2 { from { stroke-dashoffset: 600; } to { stroke-dashoffset: 0; } }
-              @keyframes dash3 { from { stroke-dashoffset: 300; } to { stroke-dashoffset: 0; } }
-              @keyframes pulse-node { 0%,100% { opacity:0.4; r:3; } 50% { opacity:1; r:5; } }
-              @keyframes pulse-node2 { 0%,100% { opacity:0.3; r:2; } 50% { opacity:0.9; r:4; } }
-              .line1 { stroke-dasharray: 400; animation: dash1 4s linear infinite; }
-              .line2 { stroke-dasharray: 600; animation: dash2 6s linear infinite; }
-              .line3 { stroke-dasharray: 300; animation: dash3 3.5s linear infinite; }
+              @keyframes dash1 { from { stroke-dashoffset: 80; } to { stroke-dashoffset: 0; } }
+              @keyframes dash2 { from { stroke-dashoffset: 120; } to { stroke-dashoffset: 0; } }
+              @keyframes dash3 { from { stroke-dashoffset: 60; } to { stroke-dashoffset: 0; } }
+              @keyframes pulse-node { 0%,100% { opacity:0.4; } 50% { opacity:1; } }
+              @keyframes pulse-node2 { 0%,100% { opacity:0.3; } 50% { opacity:0.9; } }
+              .line1 { stroke-dasharray: 80; animation: dash1 4s linear infinite; }
+              .line2 { stroke-dasharray: 120; animation: dash2 6s linear infinite; }
+              .line3 { stroke-dasharray: 60; animation: dash3 3.5s linear infinite; }
               .node1 { animation: pulse-node 2.5s ease-in-out infinite; }
               .node2 { animation: pulse-node2 3.2s ease-in-out infinite; }
               .node3 { animation: pulse-node 4s ease-in-out infinite 1s; }
             `}</style>
           </defs>
-          <g filter="url(#glow)" stroke="#d97534" strokeWidth="1" fill="none">
-            <polyline className="line1" points="100%,0 85%,0 85%,8% 70%,8% 70%,18% 55%,18%" />
-            <polyline className="line2" points="100%,5% 90%,5% 90%,15% 78%,15% 78%,28%" />
-            <polyline className="line3" points="95%,0 95%,12% 82%,12% 82%,22% 65%,22%" />
+          <g filter="url(#glow)" stroke="#d97534" strokeWidth="0.3" fill="none">
+            <polyline className="line1" points="100,0 85,0 85,8 70,8 70,18 55,18" />
+            <polyline className="line2" points="100,5 90,5 90,15 78,15 78,28" />
+            <polyline className="line3" points="95,0 95,12 82,12 82,22 65,22" />
           </g>
           <g filter="url(#glow-strong)" fill="#fd7d26">
-            <circle className="node1" cx="85%" cy="8%" r="3" />
-            <circle className="node2" cx="70%" cy="18%" r="2.5" />
-            <circle className="node3" cx="78%" cy="15%" r="2" />
-            <circle className="node1" cx="90%" cy="5%" r="2" />
+            <circle className="node1" cx="85" cy="8" r="0.8" />
+            <circle className="node2" cx="70" cy="18" r="0.7" />
+            <circle className="node3" cx="78" cy="15" r="0.6" />
+            <circle className="node1" cx="90" cy="5" r="0.6" />
           </g>
-          <g filter="url(#glow)" stroke="#f05920" strokeWidth="1" fill="none">
-            <polyline className="line2" points="0,100% 15%,100% 15%,88% 28%,88% 28%,78% 42%,78%" />
-            <polyline className="line1" points="0,92% 12%,92% 12%,82% 25%,82% 25%,70% 38%,70%" />
-            <polyline className="line3" points="5%,100% 5%,90% 18%,90% 18%,80% 32%,80%" />
+          <g filter="url(#glow)" stroke="#f05920" strokeWidth="0.3" fill="none">
+            <polyline className="line2" points="0,100 15,100 15,88 28,88 28,78 42,78" />
+            <polyline className="line1" points="0,92 12,92 12,82 25,82 25,70 38,70" />
+            <polyline className="line3" points="5,100 5,90 18,90 18,80 32,80" />
           </g>
           <g filter="url(#glow-strong)" fill="#f3a65d">
-            <circle className="node2" cx="15%" cy="88%" r="3" />
-            <circle className="node3" cx="28%" cy="78%" r="2.5" />
-            <circle className="node1" cx="25%" cy="82%" r="2" />
-            <circle className="node2" cx="12%" cy="92%" r="2" />
+            <circle className="node2" cx="15" cy="88" r="0.8" />
+            <circle className="node3" cx="28" cy="78" r="0.7" />
+            <circle className="node1" cx="25" cy="82" r="0.6" />
+            <circle className="node2" cx="12" cy="92" r="0.6" />
           </g>
-          <g filter="url(#glow)" stroke="#98734c" strokeWidth="0.8" fill="none">
-            <polyline className="line3" points="0,0 12%,0 12%,10% 22%,10% 22%,20%" />
-            <polyline className="line1" points="0,6% 8%,6% 8%,16% 18%,16% 18%,26%" />
+          <g filter="url(#glow)" stroke="#98734c" strokeWidth="0.25" fill="none">
+            <polyline className="line3" points="0,0 12,0 12,10 22,10 22,20" />
+            <polyline className="line1" points="0,6 8,6 8,16 18,16 18,26" />
           </g>
           <g filter="url(#glow-strong)" fill="#d97534">
-            <circle className="node3" cx="12%" cy="10%" r="2.5" />
-            <circle className="node1" cx="22%" cy="20%" r="2" />
+            <circle className="node3" cx="12" cy="10" r="0.7" />
+            <circle className="node1" cx="22" cy="20" r="0.6" />
           </g>
-          <g filter="url(#glow)" stroke="#9a4c1e" strokeWidth="0.8" fill="none">
-            <polyline className="line2" points="100%,100% 88%,100% 88%,90% 76%,90% 76%,80%" />
-            <polyline className="line3" points="100%,94% 92%,94% 92%,84% 80%,84%" />
+          <g filter="url(#glow)" stroke="#9a4c1e" strokeWidth="0.25" fill="none">
+            <polyline className="line2" points="100,100 88,100 88,90 76,90 76,80" />
+            <polyline className="line3" points="100,94 92,94 92,84 80,84" />
           </g>
           <g filter="url(#glow-strong)" fill="#fd7d26">
-            <circle className="node2" cx="88%" cy="90%" r="2.5" />
-            <circle className="node1" cx="76%" cy="80%" r="2" />
+            <circle className="node2" cx="88" cy="90" r="0.7" />
+            <circle className="node1" cx="76" cy="80" r="0.6" />
           </g>
           <g fill="#fd7d26" filter="url(#glow)">
-            <circle className="node2" cx="60%" cy="35%" r="1.5" />
-            <circle className="node3" cx="35%" cy="65%" r="1.5" />
-            <circle className="node1" cx="72%" cy="60%" r="1.5" />
-            <circle className="node2" cx="25%" cy="40%" r="1.5" />
+            <circle className="node2" cx="60" cy="35" r="0.5" />
+            <circle className="node3" cx="35" cy="65" r="0.5" />
+            <circle className="node1" cx="72" cy="60" r="0.5" />
+            <circle className="node2" cx="25" cy="40" r="0.5" />
           </g>
         </svg>
 

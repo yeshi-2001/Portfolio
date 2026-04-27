@@ -28,7 +28,7 @@ export default function Contact() {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        { name: form.name, email: form.email, message: form.message },
+        { name: form.name, email: form.email, message: form.message, to_email: "yeshikabandara2001@gmail.com" },
         { publicKey: EMAILJS_PUBLIC_KEY }
       );
       toast.success("Message sent! I'll get back to you soon.");
