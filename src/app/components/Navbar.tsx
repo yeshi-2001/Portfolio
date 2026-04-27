@@ -109,11 +109,10 @@ export default function Navbar() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const btnW = isMobile ? 38 : 72;
-  const btnH = isMobile ? 38 : 42;
-  const fontSize = isMobile ? "9px" : "11px";
-  const gap = isMobile ? 4 : 8;
-  const padding = isMobile ? "5px 6px" : "8px 14px";
+  const btnW = 72;
+  const btnH = 42;
+  const gap = 8;
+  const padding = "8px 14px";
 
   const frontFaceStyle = (id: string): React.CSSProperties => ({
     position: "absolute",
@@ -144,13 +143,80 @@ export default function Navbar() {
     background: "linear-gradient(135deg, #fd7d26, #f05920)",
     borderRadius: 12,
     color: "#301405",
-    fontSize,
+    fontSize: "11px",
     fontWeight: 700,
     letterSpacing: "0.5px",
     whiteSpace: "nowrap",
     padding: "0 6px",
   };
 
+  // ── Mobile bottom tab bar ──
+  if (isMobile) {
+    return (
+      <>
+        {/* Bottom tab bar */}
+        <nav style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 100,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around",
+          padding: "10px 8px 14px",
+          background: "rgba(48,20,5,0.92)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          borderTop: "1px solid rgba(253,125,38,0.25)",
+        }}>
+          {navLinks.map(({ id, label, icon }) => (
+            <button
+              key={id}
+              onClick={() => scrollTo(id)}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 4,
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                padding: "4px 8px",
+                borderRadius: 10,
+                color: activeSection === id ? "#fd7d26" : "rgba(253,125,38,0.45)",
+                transition: "color 0.2s",
+              }}
+            >
+              {icon}
+              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.3px" }}>{label}</span>
+            </button>
+          ))}
+          {/* Theme toggle */}
+          <button
+            onClick={toggle}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 4,
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: "4px 8px",
+              borderRadius: 10,
+              color: "rgba(253,125,38,0.45)",
+            }}
+          >
+            {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+            <span style={{ fontSize: 9, fontWeight: 600 }}>Theme</span>
+          </button>
+        </nav>
+      </>
+    );
+  }
+
+  // ── Desktop pill navbar ──
   return (
     <nav
       style={{
@@ -172,7 +238,6 @@ export default function Navbar() {
         boxShadow: "0 8px 32px rgba(48,20,5,0.35)",
       }}
     >
-      {/* Nav link buttons */}
       {navLinks.map(({ id, label, icon }) => (
         <div
           key={id}
@@ -192,15 +257,12 @@ export default function Navbar() {
               borderRadius: 12,
             }}
           >
-            {/* Front — icon */}
             <div style={frontFaceStyle(id)}>{icon}</div>
-            {/* Back — label */}
             <div style={backFaceStyle}>{label}</div>
           </div>
         </div>
       ))}
 
-      {/* Divider */}
       <div style={{
         width: 1,
         height: 28,
@@ -210,7 +272,6 @@ export default function Navbar() {
         flexShrink: 0,
       }} />
 
-      {/* Theme toggle button */}
       <div
         style={{ width: btnW, height: btnH, perspective: 600, cursor: "pointer" }}
         onMouseEnter={() => setHovered("theme")}
@@ -228,7 +289,6 @@ export default function Navbar() {
             borderRadius: 12,
           }}
         >
-          {/* Front — current mode icon */}
           <div style={{
             position: "absolute",
             inset: 0,
@@ -244,7 +304,6 @@ export default function Navbar() {
           }}>
             {theme === "dark" ? <SunIcon /> : <MoonIcon />}
           </div>
-          {/* Back — "Theme" label */}
           <div style={backFaceStyle}>Theme</div>
         </div>
       </div>
