@@ -2,6 +2,7 @@
 import FadeIn from "./FadeIn";
 import { GraduationCap, Code2, Cloud, Layers, Download, Eye } from "lucide-react";
 import Image from "next/image";
+import { useTheme } from "./ThemeProvider";
 
 const highlights = [
   { icon: GraduationCap, label: "CS Undergraduate", sub: "Eastern University, Trincomalee Campus" },
@@ -11,8 +12,19 @@ const highlights = [
 ];
 
 export default function About() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
+  const bg = isDark
+    ? `radial-gradient(circle at 30% 30%, #fd7d26, transparent 40%),
+       radial-gradient(circle at 70% 70%, #602e11, transparent 60%),
+       linear-gradient(135deg, #301405, #1a0d05)`
+    : `radial-gradient(circle at 30% 30%, #f0c791, transparent 40%),
+       radial-gradient(circle at 70% 60%, #fd7d26, transparent 50%),
+       linear-gradient(135deg, #ffffff, #f3a65d)`;
+
   return (
-    <section id="about" style={{ background: "var(--bg-secondary)" }} className="py-20 px-6">
+    <section id="about" style={{ background: bg, transition: "background 0.4s ease" }} className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
           <p style={{ color: "var(--highlight)" }} className="font-medium text-sm uppercase tracking-widest mb-2">
@@ -42,7 +54,7 @@ export default function About() {
 
             <div className="flex flex-col gap-2 w-full max-w-[220px]">
               <a
-                href="/cv.pdf"
+                href="/Y.M_Yeshika_B._Bandara.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ background: "var(--highlight)", color: "#301405" }}
@@ -52,8 +64,8 @@ export default function About() {
                 View CV
               </a>
               <a
-                href="/cv.pdf"
-                download="Yeshika_Bandara_CV.pdf"
+                href="/Y.M_Yeshika_B._Bandara.pdf"
+                download="Y.M_Yeshika_B._Bandara.pdf"
                 style={{ color: "var(--accent)", borderColor: "var(--accent)" }}
                 className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-medium transition-all hover:scale-105 hover:bg-[var(--accent)] hover:text-[#301405]"
               >
@@ -64,7 +76,7 @@ export default function About() {
           </FadeIn>
 
           <FadeIn delay={0.15} className="md:col-span-2">
-            <div style={{ color: "#f0c791" }} className="space-y-4 leading-relaxed mb-8 text-justify">
+            <div style={{ color: isDark ? "#f0c791" : "#301405" }} className="space-y-4 leading-relaxed mb-8 text-justify">
               <p>
                 I&apos;m a Computer Science undergraduate at{" "}
                 <span style={{ color: "var(--highlight)" }} className="font-medium">
@@ -83,7 +95,7 @@ export default function About() {
 
             <div className="grid grid-cols-2 gap-4">
               {highlights.map(({ icon: Icon, label, sub }, i) => (
-                <FadeIn key={label} delay={0.2 + i * 0.08}>
+                <FadeIn key={label} delay={0.2 + i * 0.1}>
                   <div
                     style={{ background: "var(--bg-card)", border: "1px solid var(--card-border)" }}
                     className="p-4 rounded-2xl transition-colors group hover:border-[var(--highlight)]"

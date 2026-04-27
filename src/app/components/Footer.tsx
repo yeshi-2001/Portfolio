@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="flex items-center gap-3">
           {[
             { icon: GitHubIcon, href: "https://github.com/yeshikabandara", label: "GitHub" },
-            { icon: LinkedInIcon, href: "https://linkedin.com/in/yeshikabandara", label: "LinkedIn" },
+            { icon: LinkedInIcon, href: "https://www.linkedin.com/in/yeshika-bandara-1716092a8", label: "LinkedIn" },
           ].map(({ icon: Icon, href, label }) => (
             <a
               key={label}

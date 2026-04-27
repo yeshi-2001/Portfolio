@@ -3,10 +3,23 @@ import FadeIn from "./FadeIn";
 import { projects } from "../data/portfolio";
 import { ExternalLink } from "lucide-react";
 import { GitHubIcon } from "./SocialIcons";
+import { useTheme } from "./ThemeProvider";
 
 export default function Projects() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
+  // Conic + mesh blend — different from radial (About) and linear-radial (Hero)
+  const bg = isDark
+    ? `conic-gradient(from 200deg at 70% 40%, #1a0d05 0deg, #602e11 90deg, #301405 180deg, #3d1a07 270deg, #1a0d05 360deg),
+       radial-gradient(ellipse at 20% 80%, rgba(253,125,38,0.18) 0%, transparent 55%),
+       radial-gradient(ellipse at 80% 10%, rgba(240,89,32,0.14) 0%, transparent 50%)`
+    : `conic-gradient(from 200deg at 70% 40%, #fff8f0 0deg, #f3a65d 90deg, #f0c791 180deg, #fde8c8 270deg, #fff8f0 360deg),
+       radial-gradient(ellipse at 20% 80%, rgba(253,125,38,0.2) 0%, transparent 55%),
+       radial-gradient(ellipse at 80% 10%, rgba(217,117,52,0.15) 0%, transparent 50%)`;
+
   return (
-    <section id="projects" style={{ background: "var(--bg-secondary)" }} className="py-20 px-6">
+    <section id="projects" style={{ background: bg, transition: "background 0.4s ease" }} className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
           <p style={{ color: "var(--highlight)" }} className="font-medium text-sm uppercase tracking-widest mb-2">
@@ -19,7 +32,7 @@ export default function Projects() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => (
-            <FadeIn key={project.title} delay={i * 0.1}>
+            <FadeIn key={project.title} delay={i * 0.15}>
               <div
                 style={{ background: "var(--bg-card)", border: "1px solid var(--card-border)" }}
                 className="group flex flex-col h-full p-6 rounded-2xl hover:border-[var(--highlight)] hover:shadow-xl transition-all duration-300"

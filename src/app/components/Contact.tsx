@@ -9,7 +9,7 @@ const contactInfo = [
   { icon: Mail, label: "Email", value: "yeshikabandara2001@gmail.com", href: "mailto:yeshikabandara2001@gmail.com" },
   { icon: Phone, label: "Phone", value: "0741711849", href: "tel:0741711849" },
   { icon: GitHubIcon, label: "GitHub", value: "github.com/yeshikabandara", href: "https://github.com/yeshikabandara" },
-  { icon: LinkedInIcon, label: "LinkedIn", value: "linkedin.com/in/yeshikabandara", href: "https://linkedin.com/in/yeshikabandara" },
+  { icon: LinkedInIcon, label: "LinkedIn", value: "linkedin.com/in/yeshika-bandara-1716092a8", href: "https://www.linkedin.com/in/yeshika-bandara-1716092a8" },
 ];
 
 export default function Contact() {

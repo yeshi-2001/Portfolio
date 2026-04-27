@@ -198,8 +198,8 @@ export default function Hero() {
                 Contact Me
               </button>
               <a
-                href="/cv.pdf"
-                download="Yeshika_Bandara_CV.pdf"
+                href="/Y.M_Yeshika_B._Bandara.pdf"
+                download="Y.M_Yeshika_B._Bandara.pdf"
                 className="flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all hover:scale-105"
                 style={{
                   color: "#fd7d26",
@@ -221,7 +221,7 @@ export default function Hero() {
             >
               {[
                 { icon: GitHubIcon, href: "https://github.com/yeshikabandara", label: "GitHub" },
-                { icon: LinkedInIcon, href: "https://linkedin.com/in/yeshikabandara", label: "LinkedIn" },
+                { icon: LinkedInIcon, href: "https://www.linkedin.com/in/yeshika-bandara-1716092a8", label: "LinkedIn" },
                 { icon: Mail, href: "mailto:yeshikabandara2001@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
