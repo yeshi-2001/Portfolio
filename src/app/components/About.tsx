@@ -54,7 +54,7 @@ export default function About() {
 
             <div className="flex flex-col gap-2 w-full max-w-[220px]">
               <a
-                href="/Y.M_Yeshika_B._Bandara.pdf"
+                href="/Y.M_Yeshika_Bandara.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ background: "var(--highlight)", color: "#301405" }}
@@ -64,8 +64,8 @@ export default function About() {
                 View CV
               </a>
               <a
-                href="/Y.M_Yeshika_B._Bandara.pdf"
-                download="Y.M_Yeshika_B._Bandara.pdf"
+                href="/Y.M_Yeshika_Bandara.pdf"
+                download="Y.M_Yeshika_Bandara.pdf"
                 style={{ color: "var(--accent)", borderColor: "var(--accent)" }}
                 className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-medium transition-all hover:scale-105 hover:bg-[var(--accent)] hover:text-[#301405]"
               >
