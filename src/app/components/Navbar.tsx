@@ -109,11 +109,11 @@ export default function Navbar() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const btnW = isMobile ? 52 : 72;
-  const btnH = isMobile ? 36 : 42;
+  const btnW = isMobile ? 38 : 72;
+  const btnH = isMobile ? 38 : 42;
   const fontSize = isMobile ? "9px" : "11px";
-  const gap = isMobile ? 6 : 8;
-  const padding = isMobile ? "6px 8px" : "8px 14px";
+  const gap = isMobile ? 4 : 8;
+  const padding = isMobile ? "5px 6px" : "8px 14px";
 
   const frontFaceStyle = (id: string): React.CSSProperties => ({
     position: "absolute",

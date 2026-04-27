@@ -151,7 +151,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl md:text-2xl font-medium mb-6 !text-center -translate-x-[120px]"
+              className="text-xl md:text-2xl font-medium mb-6 !text-center md:-translate-x-[120px]"
               style={{ color: isDark ? "#f3a65d" : "#602e11" }}
             >
               Software Engineer Intern
