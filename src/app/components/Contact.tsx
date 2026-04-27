@@ -29,11 +29,12 @@ export default function Contact() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         { from_name: form.name, from_email: form.email, message: form.message },
-        EMAILJS_PUBLIC_KEY
+        { publicKey: EMAILJS_PUBLIC_KEY }
       );
       toast.success("Message sent! I'll get back to you soon.");
       setForm({ name: "", email: "", message: "" });
-    } catch {
+    } catch (err) {
+      console.error("EmailJS error:", err);
       toast.error("Failed to send. Please try again.");
     } finally {
       setLoading(false);
