@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-primary: #f0c791;
+  --bg-secondary: #f3a65d;
+  --bg-card: #ffffff;
+  --text-primary: #301405;
+  --text-secondary: #602e11;
+  --text-muted: #98734c;
+  --accent: #d97534;
+  --highlight: #fd7d26;
+  --cta-hover: #f05920;
+  --border-color: rgba(154,76,30,0.2);
+  --card-border: rgba(217,117,52,0.25);
+  --icon-bg: rgba(217,117,52,0.15);
+  --tag-bg: rgba(253,125,38,0.12);
+  --input-bg: #fdf3e3;
+  --nav-bg: rgba(240,199,145,0.95);
+  --profile-ring: #f0c791;
+}
+
+html.dark {
+  --bg-primary: #301405;
+  --bg-secondary: #602e11;
+  --bg-card: rgba(154,76,30,0.15);
+  --text-primary: #f0c791;
+  --text-secondary: #f3a65d;
+  --text-muted: #98734c;
+  --accent: #fd7d26;
+  --highlight: #f05920;
+  --cta-hover: #d97534;
+  --border-color: rgba(253,125,38,0.2);
+  --card-border: rgba(243,166,93,0.2);
+  --icon-bg: rgba(253,125,38,0.15);
+  --tag-bg: rgba(253,125,38,0.12);
+  --input-bg: #3d1a07;
+  --nav-bg: rgba(48,20,5,0.95);
+  --profile-ring: #301405;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Sections that use inline style background need this fallback */
+section {
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
