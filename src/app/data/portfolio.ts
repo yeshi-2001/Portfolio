@@ -6,7 +6,7 @@ export const projects = [
     description:
       "Currently developing a privacy-focused web application for university students to report and recover lost items using React.js and Python Flask. Implementing AI-powered matching algorithm with 80%+ accuracy target and intelligent verification system. Features secure database design, university email authentication, and real-time notifications for seamless item recovery.",
     tech: ["React.js", "Python Flask", "PostgreSQL", "OpenAI API", "JWT Authentication"],
-    github: "https://github.com/yeshikabandara",
+    github: "https://github.com/yeshi-2001",
     demo: "#",
   },
   {
@@ -16,7 +16,7 @@ export const projects = [
     description:
       "Designed and developed a rule-based system that delivers emergency medical guidance. Supports 25 medical conditions across 8 categories, providing step-by-step treatment instructions and emergency alerts based on American Red Cross guidelines. Integrated the knowledge base with a web interface to ensure seamless and reliable user interaction.",
     tech: ["React.js", "Node.js", "Prolog", "JavaScript", "REST API"],
-    github: "https://github.com/yeshikabandara",
+    github: "https://github.com/yeshi-2001",
     demo: "#",
   },
   {
@@ -26,7 +26,7 @@ export const projects = [
     description:
       "Developed a full-stack web application that connects users who want to teach and learn skills. Users can register, create profiles, and add skills they can teach or learn. The system uses an AI-powered matching algorithm to suggest suitable learning partners based on skill compatibility and goals. Users can send connection requests and communicate through a real-time chat system. Implemented secure authentication and designed a structured, scalable architecture with smooth frontend-backend integration.",
     tech: ["Spring Boot", "Java", "React", "Material-UI", "PostgreSQL", "Groq API", "Spring Security", "JWT", "WebSocket"],
-    github: "https://github.com/yeshikabandara",
+    github: "https://github.com/yeshi-2001",
     demo: "https://www.linkedin.com/posts/yeshika-bandara-1716092a8_im-excited-to-share-skillmate-a-full-stack-activity-7454131735413428224-VKJd?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAEohBaUBWyjYm1PKibanKAOa9NFh7RfQL5c&utm_campaign=copy_link",
   },
 ];

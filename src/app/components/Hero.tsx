@@ -221,7 +221,7 @@ export default function Hero() {
               className="flex items-center justify-center md:justify-start gap-4"
             >
               {[
-                { icon: GitHubIcon, href: "https://github.com/yeshikabandara", label: "GitHub" },
+                { icon: GitHubIcon, href: "https://github.com/yeshi-2001", label: "GitHub" },
                 { icon: LinkedInIcon, href: "https://www.linkedin.com/in/yeshika-bandara-1716092a8", label: "LinkedIn" },
                 { icon: Mail, href: "mailto:yeshikabandara2001@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
