@@ -6,7 +6,7 @@ import { GitHubIcon, LinkedInIcon } from "./SocialIcons";
 import toast, { Toaster } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 
-const EMAILJS_SERVICE_ID = "service_99l2gwc";
+const EMAILJS_SERVICE_ID = "service_h8mcur7";
 const EMAILJS_TEMPLATE_ID = "template_cge7k02";
 const EMAILJS_PUBLIC_KEY = "Av1zmwHKICga2uhUP";
 
