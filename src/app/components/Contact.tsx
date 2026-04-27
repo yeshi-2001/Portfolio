@@ -4,6 +4,11 @@ import FadeIn from "./FadeIn";
 import { Mail, Phone, Send } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "./SocialIcons";
 import toast, { Toaster } from "react-hot-toast";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_99l2gwc";
+const EMAILJS_TEMPLATE_ID = "template_cge7k02";
+const EMAILJS_PUBLIC_KEY = "Av1zmwHKICga2uhUP";
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "yeshikabandara2001@gmail.com", href: "mailto:yeshikabandara2001@gmail.com" },
@@ -19,10 +24,20 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    toast.success("Message sent! I'll get back to you soon.");
-    setForm({ name: "", email: "", message: "" });
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        { from_name: form.name, from_email: form.email, message: form.message },
+        EMAILJS_PUBLIC_KEY
+      );
+      toast.success("Message sent! I'll get back to you soon.");
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      toast.error("Failed to send. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
