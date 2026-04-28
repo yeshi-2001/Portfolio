@@ -3,22 +3,22 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg-primary: #0a0f0f;
-  --bg-secondary: #0d1a1a;
-  --bg-card: #111818;
-  --text-primary: #e0f7f7;
-  --text-secondary: #76e6eb;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f0fdfe;
+  --bg-card: #ffffff;
+  --text-primary: #0a0f0f;
+  --text-secondary: #0d1a1a;
   --text-muted: #2a6b70;
-  --accent: #13ddd1;
+  --accent: #0fa89e;
   --highlight: #13ddd1;
   --cta-hover: #0fa89e;
-  --border-color: rgba(19,221,209,0.15);
-  --card-border: rgba(19,221,209,0.12);
+  --border-color: rgba(19,221,209,0.2);
+  --card-border: rgba(19,221,209,0.15);
   --icon-bg: rgba(19,221,209,0.08);
   --tag-bg: rgba(19,221,209,0.08);
-  --input-bg: #0d1a1a;
-  --nav-bg: rgba(10,15,15,0.95);
-  --profile-ring: #0a0f0f;
+  --input-bg: #f0fdfe;
+  --nav-bg: rgba(255,255,255,0.95);
+  --profile-ring: #ffffff;
 }
 
 html.dark {

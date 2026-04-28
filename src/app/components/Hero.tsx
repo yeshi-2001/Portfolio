@@ -16,26 +16,32 @@ export default function Hero() {
     <section
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center relative px-6 overflow-hidden"
-      style={{ background: isDark ? "#050a0a" : "#0a0f0f" }}
+      style={{ background: isDark ? "#050a0a" : "#ffffff" }}
     >
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0" style={{
-          background: "radial-gradient(ellipse 80% 60% at 50% 50%, #0a0f0f 30%, #0d1a1a 60%, #050a0a 100%)"
+          background: isDark
+            ? "radial-gradient(ellipse 80% 60% at 50% 50%, #0a0f0f 30%, #0d1a1a 60%, #050a0a 100%)"
+            : "radial-gradient(ellipse 80% 60% at 50% 50%, #ffffff 30%, #f0fdfe 60%, #ffffff 100%)"
         }} />
 
         <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full" style={{
-          background: "radial-gradient(circle, rgba(19,221,209,0.08) 0%, transparent 70%)",
+          background: isDark
+            ? "radial-gradient(circle, rgba(19,221,209,0.08) 0%, transparent 70%)"
+            : "radial-gradient(circle, rgba(19,221,209,0.06) 0%, transparent 70%)",
           filter: "blur(60px)"
         }} />
 
         <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full" style={{
-          background: "radial-gradient(circle, rgba(19,221,209,0.05) 0%, transparent 70%)",
+          background: isDark
+            ? "radial-gradient(circle, rgba(19,221,209,0.05) 0%, transparent 70%)"
+            : "radial-gradient(circle, rgba(19,221,209,0.04) 0%, transparent 70%)",
           filter: "blur(60px)"
         }} />
 
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 100" preserveAspectRatio="none"
-          style={{ opacity: 0.25 }}>
+          style={{ opacity: isDark ? 0.25 : 0.12 }}>
           <defs>
             <filter id="glow">
               <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
@@ -98,7 +104,9 @@ export default function Hero() {
         }} />
 
         <div className="absolute inset-0" style={{
-          background: "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(0,0,0,0.7) 100%)"
+          background: isDark
+            ? "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(0,0,0,0.7) 100%)"
+            : "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(240,253,254,0.5) 100%)"
         }} />
       </div>
 
@@ -110,7 +118,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
-              style={{ color: "#e0f7f7" }}
+              style={{ color: isDark ? "#e0f7f7" : "#0a0f0f" }}
             >
               Yeshika B.{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#13ddd1] to-[#0fa89e]">
@@ -123,7 +131,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl md:text-2xl font-medium mb-6 !text-center md:-translate-x-[120px]"
-              style={{ color: "#13ddd1" }}
+              style={{ color: isDark ? "#13ddd1" : "#0fa89e" }}
             >
               Software Engineer Intern
             </motion.p>
@@ -133,7 +141,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-base md:text-lg font-bold max-w-xl mb-8 !text-center"
-              style={{ color: "#a0c8c8" }}
+              style={{ color: isDark ? "#a0c8c8" : "#2a6b70" }}
             >
               Passionate about software development, cloud technologies, and automation.
               Building scalable solutions that make a difference.
@@ -150,7 +158,7 @@ export default function Hero() {
                 className="px-6 py-3 rounded-full font-medium transition-all hover:scale-105 shadow-lg"
                 style={{
                   background: "linear-gradient(135deg, #13ddd1, #0fa89e)",
-                  color: "#050a0a",
+                  color: isDark ? "#050a0a" : "#ffffff",
                   boxShadow: "0 4px 20px rgba(19,221,209,0.25)"
                 }}
               >
@@ -160,9 +168,9 @@ export default function Hero() {
                 onClick={() => scrollTo("contact")}
                 className="px-6 py-3 rounded-full font-medium transition-all hover:scale-105"
                 style={{
-                  color: "#13ddd1",
-                  border: "1px solid rgba(19,221,209,0.3)",
-                  background: "rgba(19,221,209,0.05)",
+                  color: isDark ? "#13ddd1" : "#0fa89e",
+                  border: `1px solid ${isDark ? "rgba(19,221,209,0.3)" : "rgba(15,168,158,0.4)"}`,
+                  background: isDark ? "rgba(19,221,209,0.05)" : "rgba(19,221,209,0.04)",
                   backdropFilter: "blur(8px)"
                 }}
               >
@@ -173,9 +181,9 @@ export default function Hero() {
                 download="Y.M_Yeshika_B._Bandara.pdf"
                 className="flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all hover:scale-105"
                 style={{
-                  color: "#13ddd1",
-                  border: "1px solid rgba(19,221,209,0.3)",
-                  background: "rgba(19,221,209,0.05)",
+                  color: isDark ? "#13ddd1" : "#0fa89e",
+                  border: `1px solid ${isDark ? "rgba(19,221,209,0.3)" : "rgba(15,168,158,0.4)"}`,
+                  background: isDark ? "rgba(19,221,209,0.05)" : "rgba(19,221,209,0.04)",
                   backdropFilter: "blur(8px)"
                 }}
               >
@@ -203,12 +211,12 @@ export default function Hero() {
                   aria-label={label}
                   className="p-3 rounded-full transition-all hover:scale-110"
                   style={{
-                    background: "rgba(19,221,209,0.05)",
-                    color: "#2a6b70",
-                    border: "1px solid rgba(19,221,209,0.15)"
+                    background: isDark ? "rgba(19,221,209,0.05)" : "rgba(19,221,209,0.06)",
+                    color: isDark ? "#2a6b70" : "#0fa89e",
+                    border: `1px solid ${isDark ? "rgba(19,221,209,0.15)" : "rgba(19,221,209,0.2)"}`
                   }}
                   onMouseEnter={e => (e.currentTarget.style.color = "#13ddd1")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "#2a6b70")}
+                  onMouseLeave={e => (e.currentTarget.style.color = isDark ? "#2a6b70" : "#0fa89e")}
                 >
                   <Icon size={18} />
                 </a>
@@ -226,14 +234,14 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-full" style={{
                 background: "linear-gradient(135deg, #13ddd1, #0fa89e)",
                 filter: "blur(20px)",
-                opacity: 0.2,
+                opacity: isDark ? 0.2 : 0.15,
                 transform: "scale(1.1)"
               }} />
               <div className="rounded-full p-[3px] relative" style={{
                 background: "linear-gradient(135deg, #13ddd1, #0fa89e)",
                 boxShadow: "0 0 30px rgba(19,221,209,0.15)"
               }}>
-                <div className="rounded-full p-[3px]" style={{ background: "#050a0a" }}>
+                <div className="rounded-full p-[3px]" style={{ background: isDark ? "#050a0a" : "#ffffff" }}>
                   <div className="rounded-full overflow-hidden w-56 h-56 md:w-72 md:h-72">
                     <Image
                       src="/profile.jpg"
@@ -250,10 +258,10 @@ export default function Hero() {
               <div
                 className="absolute -bottom-3 -right-3 rounded-2xl px-3 py-2 shadow-lg"
                 style={{
-                  background: "rgba(5,10,10,0.9)",
+                  background: isDark ? "rgba(5,10,10,0.9)" : "rgba(255,255,255,0.95)",
                   border: "1px solid rgba(19,221,209,0.2)",
                   backdropFilter: "blur(12px)",
-                  color: "#e0f7f7"
+                  color: isDark ? "#e0f7f7" : "#0a0f0f"
                 }}
               >
                 <p className="text-xs font-semibold text-center">Software Engineer</p>

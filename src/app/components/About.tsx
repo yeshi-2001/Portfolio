@@ -15,9 +15,12 @@ export default function About() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
 
-  const bg = `radial-gradient(circle at 30% 30%, rgba(19,221,209,0.03), transparent 50%),
+  const bg = isDark
+    ? `radial-gradient(circle at 30% 30%, rgba(19,221,209,0.03), transparent 50%),
        radial-gradient(circle at 70% 70%, rgba(19,221,209,0.02), transparent 60%),
-       linear-gradient(135deg, #050a0a, #0a0f0f)`;
+       linear-gradient(135deg, #050a0a, #0a0f0f)`
+    : `radial-gradient(circle at 30% 30%, rgba(19,221,209,0.04), transparent 50%),
+       linear-gradient(135deg, #ffffff, #f0fdfe)`;
 
   return (
     <section id="about" style={{ background: bg, transition: "background 0.4s ease" }} className="py-20 px-6">
@@ -52,7 +55,7 @@ export default function About() {
           </FadeIn>
 
           <FadeIn delay={0.15} className="md:col-span-2">
-            <div style={{ color: "#e0f7f7" }} className="space-y-4 leading-relaxed mb-8 text-justify">
+            <div style={{ color: isDark ? "#e0f7f7" : "#0a0f0f" }} className="space-y-4 leading-relaxed mb-8 text-justify">
               <p>
                 I&apos;m a Computer Science undergraduate at{" "}
                 <span style={{ color: "var(--highlight)" }} className="font-medium">Eastern University, Trincomalee</span>
