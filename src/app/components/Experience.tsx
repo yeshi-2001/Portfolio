@@ -27,7 +27,7 @@ export default function Experience() {
                     style={{ background: "var(--highlight)", border: "2px solid var(--bg-primary)" }}
                     className="absolute left-0 w-10 h-10 rounded-full flex items-center justify-center"
                   >
-                    <Briefcase size={16} style={{ color: "#301405" }} />
+                    <Briefcase size={16} style={{ color: "#050a0a" }} />
                   </div>
 
                   <div

@@ -121,10 +121,10 @@ export default function Contact() {
               </div>
               <button
                 type="submit" disabled={loading} suppressHydrationWarning
-                style={{ background: "var(--highlight)", color: "#301405" }}
+                style={{ background: "var(--highlight)", color: "#050a0a" }}
                 className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all hover:scale-[1.02] hover:opacity-90 disabled:opacity-60 shadow-lg"
               >
-                {loading ? <span className="w-4 h-4 border-2 border-[#301405]/30 border-t-[#301405] rounded-full animate-spin" /> : <Send size={16} />}
+                {loading ? <span className="w-4 h-4 border-2 border-[#050a0a]/30 border-t-[#050a0a] rounded-full animate-spin" /> : <Send size={16} />}
                 {loading ? "Sending..." : "Send Message"}
               </button>
             </form>

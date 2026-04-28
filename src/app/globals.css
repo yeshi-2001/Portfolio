@@ -3,46 +3,44 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg-primary: #f0c791;
-  --bg-secondary: #f3a65d;
-  --bg-card: #ffffff;
-  --text-primary: #301405;
-  --text-secondary: #602e11;
-  --text-muted: #98734c;
-  --accent: #d97534;
-  --highlight: #fd7d26;
-  --cta-hover: #f05920;
-  --border-color: rgba(154,76,30,0.2);
-  --card-border: rgba(217,117,52,0.25);
-  --icon-bg: rgba(217,117,52,0.15);
-  --tag-bg: rgba(253,125,38,0.12);
-  --input-bg: #fdf3e3;
-  --nav-bg: rgba(240,199,145,0.95);
-  --profile-ring: #f0c791;
+  --bg-primary: #0a0f0f;
+  --bg-secondary: #0d1a1a;
+  --bg-card: #111818;
+  --text-primary: #e0f7f7;
+  --text-secondary: #76e6eb;
+  --text-muted: #2a6b70;
+  --accent: #13ddd1;
+  --highlight: #13ddd1;
+  --cta-hover: #0fa89e;
+  --border-color: rgba(19,221,209,0.15);
+  --card-border: rgba(19,221,209,0.12);
+  --icon-bg: rgba(19,221,209,0.08);
+  --tag-bg: rgba(19,221,209,0.08);
+  --input-bg: #0d1a1a;
+  --nav-bg: rgba(10,15,15,0.95);
+  --profile-ring: #0a0f0f;
 }
 
 html.dark {
-  --bg-primary: #301405;
-  --bg-secondary: #602e11;
-  --bg-card: rgba(154,76,30,0.15);
-  --text-primary: #f0c791;
-  --text-secondary: #f3a65d;
-  --text-muted: #98734c;
-  --accent: #fd7d26;
-  --highlight: #f05920;
-  --cta-hover: #d97534;
-  --border-color: rgba(253,125,38,0.2);
-  --card-border: rgba(243,166,93,0.2);
-  --icon-bg: rgba(253,125,38,0.15);
-  --tag-bg: rgba(253,125,38,0.12);
-  --input-bg: #3d1a07;
-  --nav-bg: rgba(48,20,5,0.95);
-  --profile-ring: #301405;
+  --bg-primary: #050a0a;
+  --bg-secondary: #0a1414;
+  --bg-card: rgba(19,221,209,0.05);
+  --text-primary: #e0f7f7;
+  --text-secondary: #76e6eb;
+  --text-muted: #2a6b70;
+  --accent: #13ddd1;
+  --highlight: #13ddd1;
+  --cta-hover: #0fa89e;
+  --border-color: rgba(19,221,209,0.12);
+  --card-border: rgba(19,221,209,0.1);
+  --icon-bg: rgba(19,221,209,0.07);
+  --tag-bg: rgba(19,221,209,0.07);
+  --input-bg: #080f0f;
+  --nav-bg: rgba(5,10,10,0.95);
+  --profile-ring: #050a0a;
 }
 
-* {
-  scroll-behavior: smooth;
-}
+* { scroll-behavior: smooth; }
 
 html {
   scroll-behavior: smooth;
@@ -57,18 +55,8 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Sections that use inline style background need this fallback */
-section {
-  transition: background-color 0.3s ease;
-}
+section { transition: background-color 0.3s ease; }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 3px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(19,221,209,0.3); border-radius: 3px; }
