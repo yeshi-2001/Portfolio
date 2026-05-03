@@ -3,41 +3,41 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #f0fdfe;
+  --bg-primary: #EFF6FF;
+  --bg-secondary: #DBEAFE;
   --bg-card: #ffffff;
-  --text-primary: #0a0f0f;
-  --text-secondary: #0d1a1a;
-  --text-muted: #2a6b70;
-  --accent: #0fa89e;
-  --highlight: #13ddd1;
-  --cta-hover: #0fa89e;
-  --border-color: rgba(19,221,209,0.2);
-  --card-border: rgba(19,221,209,0.15);
-  --icon-bg: rgba(19,221,209,0.08);
-  --tag-bg: rgba(19,221,209,0.08);
-  --input-bg: #f0fdfe;
-  --nav-bg: rgba(255,255,255,0.95);
-  --profile-ring: #ffffff;
+  --text-primary: #0F172A;
+  --text-secondary: #1E3A5F;
+  --text-muted: #4B6A8A;
+  --accent: #3B82F6;
+  --highlight: #60A5FA;
+  --cta-hover: #2563EB;
+  --border-color: rgba(59,130,246,0.2);
+  --card-border: rgba(59,130,246,0.15);
+  --icon-bg: rgba(59,130,246,0.08);
+  --tag-bg: rgba(59,130,246,0.08);
+  --input-bg: #EFF6FF;
+  --nav-bg: rgba(239,246,255,0.95);
+  --profile-ring: #EFF6FF;
 }
 
 html.dark {
-  --bg-primary: #050a0a;
-  --bg-secondary: #0a1414;
-  --bg-card: rgba(19,221,209,0.05);
-  --text-primary: #e0f7f7;
-  --text-secondary: #76e6eb;
-  --text-muted: #2a6b70;
-  --accent: #13ddd1;
-  --highlight: #13ddd1;
-  --cta-hover: #0fa89e;
-  --border-color: rgba(19,221,209,0.12);
-  --card-border: rgba(19,221,209,0.1);
-  --icon-bg: rgba(19,221,209,0.07);
-  --tag-bg: rgba(19,221,209,0.07);
-  --input-bg: #080f0f;
-  --nav-bg: rgba(5,10,10,0.95);
-  --profile-ring: #050a0a;
+  --bg-primary: #0A0F1E;
+  --bg-secondary: #0F172A;
+  --bg-card: rgba(59,130,246,0.05);
+  --text-primary: #E0EEFF;
+  --text-secondary: #93C5FD;
+  --text-muted: #4B6A8A;
+  --accent: #60A5FA;
+  --highlight: #3B82F6;
+  --cta-hover: #2563EB;
+  --border-color: rgba(59,130,246,0.15);
+  --card-border: rgba(59,130,246,0.12);
+  --icon-bg: rgba(59,130,246,0.08);
+  --tag-bg: rgba(59,130,246,0.08);
+  --input-bg: #080D1A;
+  --nav-bg: rgba(10,15,30,0.95);
+  --profile-ring: #0A0F1E;
 }
 
 * { scroll-behavior: smooth; }
@@ -59,4 +59,4 @@ section { transition: background-color 0.3s ease; }
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(19,221,209,0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: rgba(59,130,246,0.4); border-radius: 3px; }

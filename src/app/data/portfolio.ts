@@ -6,7 +6,7 @@ export const projects = [
     description:
       "Currently developing a privacy-focused web application for university students to report and recover lost items using React.js and Python Flask. Implementing AI-powered matching algorithm with 80%+ accuracy target and intelligent verification system. Features secure database design, university email authentication, and real-time notifications for seamless item recovery.",
     tech: ["React.js", "Python Flask", "PostgreSQL", "OpenAI API", "JWT Authentication"],
-    github: "https://github.com/yeshi-2001",
+    github: "https://github.com/yeshi-2001/Lost_And_Found_System",
     demo: "#",
   },
   {
@@ -16,7 +16,17 @@ export const projects = [
     description:
       "Designed and developed a rule-based system that delivers emergency medical guidance. Supports 25 medical conditions across 8 categories, providing step-by-step treatment instructions and emergency alerts based on American Red Cross guidelines. Integrated the knowledge base with a web interface to ensure seamless and reliable user interaction.",
     tech: ["React.js", "Node.js", "Prolog", "JavaScript", "REST API"],
-    github: "https://github.com/yeshi-2001",
+    github: "https://github.com/yeshi-2001/first-Aid-Expert-System",
+    demo: "#",
+  },
+  {
+    title: "Smart Inventory & Warehouse Management System",
+    subtitle: "Individual Project",
+    period: "2025",
+    description:
+      "A full-stack Inventory & Warehouse Management System designed to simplify stock management, billing, vendor handling, and analytics for retail businesses. Admins and employees can manage inventory, track stock movements, and generate bills through a POS interface that automatically updates inventory and sends email invoices. Includes a vendor portal for supplier registration, stock offers, and approval workflows. Features an analytics module for sales and stock data, report generation, and reorder recommendations based on historical trends. Provides real-time low stock alerts and automated email notifications.",
+    tech: ["Node.js", "Express", "Prisma", "React", "Tailwind CSS", "Recharts", "PostgreSQL", "Python Flask", "JWT", "Nodemailer", "Cron Jobs"],
+    github: "https://github.com/yeshi-2001/inventory_Management_System",
     demo: "#",
   },
   {
@@ -26,7 +36,7 @@ export const projects = [
     description:
       "Developed a full-stack web application that connects users who want to teach and learn skills. Users can register, create profiles, and add skills they can teach or learn. The system uses an AI-powered matching algorithm to suggest suitable learning partners based on skill compatibility and goals. Users can send connection requests and communicate through a real-time chat system. Implemented secure authentication and designed a structured, scalable architecture with smooth frontend-backend integration.",
     tech: ["Spring Boot", "Java", "React", "Material-UI", "PostgreSQL", "Groq API", "Spring Security", "JWT", "WebSocket"],
-    github: "https://github.com/yeshi-2001",
+    github: "https://github.com/yeshi-2001/SkillMate",
     demo: "https://www.linkedin.com/posts/yeshika-bandara-1716092a8_im-excited-to-share-skillmate-a-full-stack-activity-7454131735413428224-VKJd?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAEohBaUBWyjYm1PKibanKAOa9NFh7RfQL5c&utm_campaign=copy_link",
   },
 ];
