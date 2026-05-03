@@ -38,6 +38,24 @@ const projects = [
   },
   {
     id: 3,
+    title: "Inventory Management System",
+    description:
+      "A full-stack Inventory Management System to manage stock, vendors, sales, and billing. Implements a POS system for real-time sales recording with automatic inventory updates and invoice generation. Features vendor management with approval workflows and automated low-stock email alerts. Includes an analytics module to analyze sales trends and recommend reorder quantities, with secure role-based authentication.",
+    features: [
+      "POS system with real-time sales recording & automatic inventory updates",
+      "Invoice generation for every completed sale",
+      "Vendor management with approval workflows",
+      "Automated low-stock email alerts via Nodemailer",
+      "Analytics module for sales trends & reorder quantity recommendations",
+      "Secure role-based authentication with JWT",
+    ],
+    tech: ["Node.js", "Express", "Prisma", "React", "Tailwind CSS", "Recharts", "PostgreSQL", "Python Flask", "JWT", "Nodemailer"],
+    github: "",
+    live: "",
+    video: "/Inventory.mp4",
+  },
+  {
+    id: 4,
     title: "Skill Exchange Web Application",
     description:
       "A full-stack platform connecting users who want to teach and learn skills. Uses an AI-powered matching algorithm to suggest learning partners based on skill compatibility. Features real-time chat, connection requests, secure authentication, and a scalable architecture with smooth frontend-backend integration.",
