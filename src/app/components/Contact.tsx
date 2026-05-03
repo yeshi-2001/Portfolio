@@ -46,7 +46,7 @@ export default function Contact() {
       <Toaster position="bottom-right" />
       <div className="max-w-6xl mx-auto">
         <FadeIn>
-          <p style={{ color: "var(--highlight)" }} className="font-medium text-sm uppercase tracking-widest mb-2">
+          <p style={{ color: "var(--cta)" }} className="font-medium text-sm uppercase tracking-widest mb-2">
             Contact
           </p>
           <h2 style={{ color: "var(--text-primary)" }} className="text-3xl md:text-4xl font-bold mb-4">
@@ -68,13 +68,13 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ background: "var(--bg-card)", border: "1px solid var(--card-border)" }}
-                  className="flex items-center gap-4 p-4 rounded-2xl transition-all group hover:border-[var(--highlight)]"
+                  className="flex items-center gap-4 p-4 rounded-2xl transition-all group hover:border-[var(--cta)]"
                 >
                   <div
-                    style={{ background: "var(--icon-bg)" }}
+                    style={{ background: "rgba(18,203,192,0.08)" }}
                     className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors"
                   >
-                    <Icon size={18} style={{ color: "var(--highlight)" }} />
+                    <Icon size={18} style={{ color: "var(--cta)" }} />
                   </div>
                   <div>
                     <p style={{ color: "var(--text-muted)" }} className="text-xs">{label}</p>
@@ -94,8 +94,8 @@ export default function Contact() {
                     type="text" required value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Your name" autoComplete="off" suppressHydrationWarning
-                    style={{ background: "var(--input-bg)", border: "1px solid var(--border-color)", color: "var(--text-primary)" }}
-                    className="w-full px-4 py-3 rounded-xl focus:outline-none focus:border-[var(--highlight)] focus:ring-1 focus:ring-[var(--highlight)] transition-colors text-sm placeholder:text-[var(--text-muted)]"
+                    style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)", color: "var(--text-primary)" }}
+                    className="w-full px-4 py-3 rounded-xl focus:outline-none focus:border-[var(--cta)] focus:ring-1 focus:ring-[var(--cta)] transition-colors text-sm placeholder:text-[var(--text-muted)]"
                   />
                 </div>
                 <div>
@@ -104,8 +104,8 @@ export default function Contact() {
                     type="email" required value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="your@email.com" autoComplete="off" suppressHydrationWarning
-                    style={{ background: "var(--input-bg)", border: "1px solid var(--border-color)", color: "var(--text-primary)" }}
-                    className="w-full px-4 py-3 rounded-xl focus:outline-none focus:border-[var(--highlight)] focus:ring-1 focus:ring-[var(--highlight)] transition-colors text-sm placeholder:text-[var(--text-muted)]"
+                    style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)", color: "var(--text-primary)" }}
+                    className="w-full px-4 py-3 rounded-xl focus:outline-none focus:border-[var(--cta)] focus:ring-1 focus:ring-[var(--cta)] transition-colors text-sm placeholder:text-[var(--text-muted)]"
                   />
                 </div>
               </div>
@@ -115,16 +115,16 @@ export default function Contact() {
                   required rows={5} value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="Tell me about your project or opportunity..."
-                  style={{ background: "var(--input-bg)", border: "1px solid var(--border-color)", color: "var(--text-primary)" }}
-                  className="w-full px-4 py-3 rounded-xl focus:outline-none focus:border-[var(--highlight)] focus:ring-1 focus:ring-[var(--highlight)] transition-colors text-sm resize-none placeholder:text-[var(--text-muted)]"
+                  style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)", color: "var(--text-primary)" }}
+                  className="w-full px-4 py-3 rounded-xl focus:outline-none focus:border-[var(--cta)] focus:ring-1 focus:ring-[var(--cta)] transition-colors text-sm resize-none placeholder:text-[var(--text-muted)]"
                 />
               </div>
               <button
                 type="submit" disabled={loading} suppressHydrationWarning
-                style={{ background: "var(--highlight)", color: "#050a0a" }}
+                style={{ background: "var(--cta)", color: "var(--bg-primary)" }}
                 className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all hover:scale-[1.02] hover:opacity-90 disabled:opacity-60 shadow-lg"
               >
-                {loading ? <span className="w-4 h-4 border-2 border-[#050a0a]/30 border-t-[#050a0a] rounded-full animate-spin" /> : <Send size={16} />}
+                {loading ? <span className="w-4 h-4 border-2 border-current/30 border-t-current rounded-full animate-spin" /> : <Send size={16} />}
                 {loading ? "Sending..." : "Send Message"}
               </button>
             </form>

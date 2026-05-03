@@ -20,9 +20,9 @@ const techCategories = [
 
 const softSkills = ["Problem Solving", "Teamwork", "Time Management", "Communication", "Attention To Detail"];
 const languages = [
-  { name: "English", color: "13ddd1" },
-  { name: "Sinhala", color: "0fa89e" },
-  { name: "Tamil", color: "2a6b70" },
+  { name: "English", varAccent: "var(--cta)" },
+  { name: "Sinhala", varAccent: "var(--highlight)" },
+  { name: "Tamil", varAccent: "var(--accent)" },
 ];
 
 export default function Skills() {
@@ -32,9 +32,10 @@ export default function Skills() {
   const inView = useInView(ref, { once: false, margin: "-80px" });
 
   return (
-    <section id="skills" style={{ background: isDark ? "#050a0a" : "#ffffff", padding: "80px 24px" }}>
+    <section id="skills" style={{ background: "var(--bg-primary)", padding: "80px 24px" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-        <h2 style={{ color: isDark ? "#e0f7f7" : "#0a0f0f", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 700, marginBottom: 48, lineHeight: 1.2 }}>
+        <p style={{ color: "var(--cta)", fontSize: 12, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 8 }}>Skills</p>
+        <h2 style={{ color: "var(--text-primary)", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 700, marginBottom: 48, lineHeight: 1.2 }}>
           Tools I build with
         </h2>
 
@@ -42,11 +43,11 @@ export default function Skills() {
           style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20, marginBottom: 56 }}>
           {techCategories.map((cat) => (
             <motion.div key={cat.label} variants={cardVariant}
-              style={{ background: isDark ? "#0d1a1a" : "#ffffff", border: `1px solid ${isDark ? "rgba(19,221,209,0.1)" : "rgba(19,221,209,0.15)"}`, borderRadius: 14, padding: "20px", transition: "border-color 0.2s ease, box-shadow 0.2s ease" }}
-              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(19,221,209,0.3)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 20px rgba(19,221,209,0.06)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = isDark ? "rgba(19,221,209,0.1)" : "rgba(19,221,209,0.15)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}
+              style={{ background: "var(--bg-card)", border: "1px solid var(--card-border)", borderRadius: 14, padding: "20px", transition: "border-color 0.2s ease, box-shadow 0.2s ease" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "var(--cta)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 20px rgba(18,203,192,0.1)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "var(--card-border)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}
             >
-              <p style={{ fontFamily: "var(--font-dm-mono), monospace", fontSize: 11, letterSpacing: "1.2px", textTransform: "uppercase", color: isDark ? "#13ddd1" : "#0fa89e", marginBottom: 14, display: "flex", alignItems: "center", gap: 6 }}>
+              <p style={{ fontFamily: "var(--font-dm-mono), monospace", fontSize: 11, letterSpacing: "1.2px", textTransform: "uppercase", color: "var(--highlight)", marginBottom: 14, display: "flex", alignItems: "center", gap: 6 }}>
                 <span>{cat.emoji}</span> {cat.label}
               </p>
               <img src={`https://skillicons.dev/icons?i=${cat.icons}&theme=dark`} alt={cat.label} style={{ display: "block", height: 40 }} />
@@ -55,26 +56,26 @@ export default function Skills() {
         </motion.div>
 
         <motion.div variants={cardVariant} initial="hidden" animate={inView ? "show" : "hidden"} style={{ marginBottom: 40 }}>
-          <h3 style={{ color: isDark ? "#e0f7f7" : "#0a0f0f", fontSize: "1.2rem", fontWeight: 700, marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>🤝 Soft Skills</h3>
+          <h3 style={{ color: "var(--text-primary)", fontSize: "1.2rem", fontWeight: 700, marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>🤝 Soft Skills</h3>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             {softSkills.map((skill) => (
               <span key={skill}
-                style={{ background: "rgba(19,221,209,0.06)", color: isDark ? "#13ddd1" : "#0fa89e", border: "1px solid rgba(19,221,209,0.15)", borderRadius: 999, padding: "5px 14px", fontSize: 13, fontWeight: 500, transition: "background 0.2s, color 0.2s", cursor: "default" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLSpanElement).style.background = "#13ddd1"; (e.currentTarget as HTMLSpanElement).style.color = isDark ? "#050a0a" : "#ffffff"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLSpanElement).style.background = "rgba(19,221,209,0.06)"; (e.currentTarget as HTMLSpanElement).style.color = isDark ? "#13ddd1" : "#0fa89e"; }}
+                style={{ background: "rgba(18,203,192,0.06)", color: "var(--highlight)", border: "1px solid var(--card-border)", borderRadius: 999, padding: "5px 14px", fontSize: 13, fontWeight: 500, transition: "background 0.2s, color 0.2s", cursor: "default" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLSpanElement).style.background = "var(--cta)"; (e.currentTarget as HTMLSpanElement).style.color = "var(--bg-primary)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLSpanElement).style.background = "rgba(18,203,192,0.06)"; (e.currentTarget as HTMLSpanElement).style.color = "var(--highlight)"; }}
               >{skill}</span>
             ))}
           </div>
         </motion.div>
 
         <motion.div variants={cardVariant} initial="hidden" animate={inView ? "show" : "hidden"}>
-          <h3 style={{ color: isDark ? "#e0f7f7" : "#0a0f0f", fontSize: "1.2rem", fontWeight: 700, marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>🌐 Languages</h3>
+          <h3 style={{ color: "var(--text-primary)", fontSize: "1.2rem", fontWeight: 700, marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>🌐 Languages</h3>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
             {languages.map((lang) => (
               <span key={lang.name}
-                style={{ background: `#${lang.color}15`, color: `#${lang.color}`, border: `1px solid #${lang.color}30`, borderRadius: 999, padding: "5px 16px", fontSize: 13, fontWeight: 600, cursor: "default", transition: "background 0.2s" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLSpanElement).style.background = `#${lang.color}25`; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLSpanElement).style.background = `#${lang.color}15`; }}
+                style={{ background: "rgba(18,203,192,0.06)", color: lang.varAccent, border: "1px solid var(--card-border)", borderRadius: 999, padding: "5px 16px", fontSize: 13, fontWeight: 600, cursor: "default", transition: "background 0.2s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLSpanElement).style.background = "rgba(18,203,192,0.15)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLSpanElement).style.background = "rgba(18,203,192,0.06)"; }}
               >{lang.name}</span>
             ))}
           </div>

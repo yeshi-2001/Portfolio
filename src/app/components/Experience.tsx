@@ -8,7 +8,7 @@ export default function Experience() {
     <section id="experience" style={{ background: "var(--bg-primary)" }} className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <FadeIn>
-          <p style={{ color: "var(--highlight)" }} className="font-medium text-sm uppercase tracking-widest mb-2">
+          <p style={{ color: "var(--cta)" }} className="font-medium text-sm uppercase tracking-widest mb-2">
             Experience
           </p>
           <h2 style={{ color: "var(--text-primary)" }} className="text-3xl md:text-4xl font-bold mb-12">
@@ -24,10 +24,10 @@ export default function Experience() {
               <FadeIn key={role} delay={i * 0.15}>
                 <div className="relative flex gap-6 pl-14">
                   <div
-                    style={{ background: "var(--highlight)", border: "2px solid var(--bg-primary)" }}
+                    style={{ background: "var(--cta)", border: "2px solid var(--bg-primary)" }}
                     className="absolute left-0 w-10 h-10 rounded-full flex items-center justify-center"
                   >
-                    <Briefcase size={16} style={{ color: "#050a0a" }} />
+                    <Briefcase size={16} style={{ color: "var(--bg-primary)" }} />
                   </div>
 
                   <div
@@ -39,7 +39,7 @@ export default function Experience() {
                         <h3 style={{ color: "var(--text-primary)" }} className="font-bold">{role}</h3>
                         <p style={{ color: "var(--accent)" }} className="text-sm font-medium">{org}</p>
                       </div>
-                      <span style={{ background: "var(--tag-bg)", color: "var(--text-muted)" }} className="text-xs px-3 py-1 rounded-full">
+                      <span style={{ background: "rgba(18,203,192,0.08)", color: "var(--text-muted)" }} className="text-xs px-3 py-1 rounded-full">
                         {period}
                       </span>
                     </div>

@@ -3,11 +3,11 @@ import { GitHubIcon, LinkedInIcon } from "./SocialIcons";
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#050a0a", borderTop: "1px solid rgba(19,221,209,0.1)" }} className="py-8 px-6">
+    <footer style={{ background: "var(--bg-primary)", borderTop: "1px solid var(--border-color)" }} className="py-8 px-6">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p style={{ color: "#2a6b70" }} className="text-sm flex items-center gap-1.5">
-          Built with <Heart size={14} style={{ color: "#13ddd1", fill: "#13ddd1" }} /> by{" "}
-          <span style={{ color: "#13ddd1" }} className="font-medium">Yeshika B. Bandara</span>
+        <p style={{ color: "var(--text-muted)" }} className="text-sm flex items-center gap-1.5">
+          Built with <Heart size={14} style={{ color: "var(--cta)", fill: "var(--cta)" }} /> by{" "}
+          <span style={{ color: "var(--cta)" }} className="font-medium">Yeshika B. Bandara</span>
           {" "}· {new Date().getFullYear()}
         </p>
         <div className="flex items-center gap-3">
@@ -16,8 +16,8 @@ export default function Footer() {
             { icon: LinkedInIcon, href: "https://www.linkedin.com/in/yeshika-bandara-1716092a8", label: "LinkedIn" },
           ].map(({ icon: Icon, href, label }) => (
             <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-              style={{ color: "#2a6b70" }}
-              className="p-2 rounded-full transition-all hover:text-[#13ddd1] hover:bg-[rgba(19,221,209,0.05)]">
+              style={{ color: "var(--text-muted)" }}
+              className="p-2 rounded-full transition-all hover:text-[var(--cta)] hover:bg-[rgba(18,203,192,0.08)]">
               <Icon size={18} />
             </a>
           ))}

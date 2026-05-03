@@ -3,41 +3,33 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg-primary: #EFF6FF;
-  --bg-secondary: #DBEAFE;
+  --bg-primary: #e0faf9;
+  --bg-secondary: #b2f0ec;
   --bg-card: #ffffff;
-  --text-primary: #0F172A;
-  --text-secondary: #1E3A5F;
-  --text-muted: #4B6A8A;
-  --accent: #3B82F6;
-  --highlight: #60A5FA;
-  --cta-hover: #2563EB;
-  --border-color: rgba(59,130,246,0.2);
-  --card-border: rgba(59,130,246,0.15);
-  --icon-bg: rgba(59,130,246,0.08);
-  --tag-bg: rgba(59,130,246,0.08);
-  --input-bg: #EFF6FF;
-  --nav-bg: rgba(239,246,255,0.95);
-  --profile-ring: #EFF6FF;
+  --text-primary: #0b1212;
+  --text-secondary: #0c4340;
+  --text-muted: #0e6661;
+  --accent: #0f8c85;
+  --highlight: #10ada3;
+  --cta: #12cbc0;
+  --cta-hover: #11bdb2;
+  --border-color: rgba(15,140,133,0.2);
+  --card-border: rgba(18,203,192,0.25);
 }
 
-html.dark {
-  --bg-primary: #0A0F1E;
-  --bg-secondary: #0F172A;
-  --bg-card: rgba(59,130,246,0.05);
-  --text-primary: #E0EEFF;
-  --text-secondary: #93C5FD;
-  --text-muted: #4B6A8A;
-  --accent: #60A5FA;
-  --highlight: #3B82F6;
-  --cta-hover: #2563EB;
-  --border-color: rgba(59,130,246,0.15);
-  --card-border: rgba(59,130,246,0.12);
-  --icon-bg: rgba(59,130,246,0.08);
-  --tag-bg: rgba(59,130,246,0.08);
-  --input-bg: #080D1A;
-  --nav-bg: rgba(10,15,30,0.95);
-  --profile-ring: #0A0F1E;
+.dark {
+  --bg-primary: #0b1212;
+  --bg-secondary: #0c2523;
+  --bg-card: rgba(18,203,192,0.05);
+  --text-primary: #e0faf9;
+  --text-secondary: #11bdb2;
+  --text-muted: #0f8c85;
+  --accent: #10ada3;
+  --highlight: #12cbc0;
+  --cta: #12cbc0;
+  --cta-hover: #11bdb2;
+  --border-color: rgba(18,203,192,0.15);
+  --card-border: rgba(18,203,192,0.2);
 }
 
 * { scroll-behavior: smooth; }
@@ -59,4 +51,16 @@ section { transition: background-color 0.3s ease; }
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(59,130,246,0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: rgba(18,203,192,0.4); border-radius: 3px; }
+
+*, *:focus, *:focus-visible {
+  outline-color: var(--cta);
+}
+
+:root, .dark {
+  --tw-ring-color: rgba(18,203,192,0.5);
+}
+
+* {
+  accent-color: var(--cta);
+}

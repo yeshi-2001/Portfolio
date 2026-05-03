@@ -153,23 +153,24 @@ export default function Projects() {
 
       <div style={{ maxWidth: 1100, width: "100%", margin: "0 auto" }}>
 
-        {/* Section header */}
-        <div style={{ marginBottom: 32, display: "flex", alignItems: "baseline", gap: 16, flexWrap: "wrap" }}>
-          <h2 style={{
-            color: "var(--text-primary)",
-            fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
-            fontWeight: 700,
-            lineHeight: 1.2,
-            margin: 0,
-          }}>
-            Featured Projects
-          </h2>
-          <span style={{ color: "var(--text-muted)", fontSize: 14, fontFamily: "var(--font-dm-mono), monospace" }}>
-            {current + 1} / {projects.length}
-          </span>
+        <div style={{ marginBottom: 32 }}>
+          <p style={{ color: "var(--cta)", fontSize: 12, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 6 }}>Projects</p>
+          <div style={{ display: "flex", alignItems: "baseline", gap: 16, flexWrap: "wrap" }}>
+            <h2 style={{
+              color: "var(--text-primary)",
+              fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
+              fontWeight: 700,
+              lineHeight: 1.2,
+              margin: 0,
+            }}>
+              Featured Projects
+            </h2>
+            <span style={{ color: "var(--text-muted)", fontSize: 14, fontFamily: "var(--font-dm-mono), monospace" }}>
+              {current + 1} / {projects.length}
+            </span>
+          </div>
         </div>
 
-        {/* Card */}
         <div
           style={{
             position: "relative",
@@ -182,7 +183,6 @@ export default function Projects() {
             ...cardTransition,
           }}
         >
-          {/* Video / placeholder fills entire card */}
           {project.video ? (
             <>
               {!videoLoaded && (
@@ -229,7 +229,6 @@ export default function Projects() {
             </div>
           )}
 
-          {/* Dark gradient overlay at top for title readability */}
           <div style={{
             position: "absolute",
             top: 0, left: 0, right: 0,
@@ -239,15 +238,9 @@ export default function Projects() {
             pointerEvents: "none",
           }} />
 
-          {/* Project title — top left */}
-          <div style={{
-            position: "absolute",
-            top: 20,
-            left: 24,
-            zIndex: 3,
-          }}>
+          <div style={{ position: "absolute", top: 20, left: 24, zIndex: 3 }}>
             <h3 style={{
-              color: "#ffffff",
+              color: "var(--bg-primary)",
               fontSize: isMobile ? 16 : 20,
               fontWeight: 700,
               margin: 0,
@@ -257,7 +250,6 @@ export default function Projects() {
             </h3>
           </div>
 
-          {/* Info icon button — top right */}
           <button
             onClick={() => setShowDetails((v) => !v)}
             title={showDetails ? "Hide details" : "Show details"}
@@ -270,8 +262,8 @@ export default function Projects() {
               height: 36,
               borderRadius: "50%",
               border: "1.5px solid rgba(255,255,255,0.5)",
-              background: showDetails ? "var(--accent)" : "rgba(0,0,0,0.45)",
-              color: "#ffffff",
+              background: showDetails ? "var(--cta)" : "rgba(0,0,0,0.45)",
+              color: "var(--bg-primary)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -283,22 +275,16 @@ export default function Projects() {
             onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
           >
             {showDetails ? (
-              /* X icon */
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <line x1="18" y1="6" x2="6" y2="18"/>
-                <line x1="6" y1="6" x2="18" y2="18"/>
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
               </svg>
             ) : (
-              /* Info icon */
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="12" y1="8" x2="12" y2="8" strokeWidth="3"/>
-                <line x1="12" y1="12" x2="12" y2="16"/>
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="8" strokeWidth="3"/><line x1="12" y1="12" x2="12" y2="16"/>
               </svg>
             )}
           </button>
 
-          {/* Details overlay — slides up from bottom */}
           {showDetails && (
             <div
               className="details-panel"
@@ -306,52 +292,49 @@ export default function Projects() {
                 position: "absolute",
                 inset: 0,
                 zIndex: 5,
-                background: "rgba(10,15,30,0.92)",
+                background: "rgba(11,18,18,0.94)",
                 backdropFilter: "blur(16px)",
                 overflowY: "auto",
                 padding: isMobile ? "60px 20px 24px" : "60px 36px 32px",
               }}
             >
-              <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 13.5, lineHeight: 1.7, marginBottom: 18 }}>
+              <p style={{ color: "rgba(224,250,249,0.75)", fontSize: 13.5, lineHeight: 1.7, marginBottom: 18 }}>
                 {project.description}
               </p>
 
-              {/* Features */}
               <ul style={{ listStyle: "none", padding: 0, margin: "0 0 18px 0" }}>
                 {project.features.map((f, i) => (
                   <li key={i} style={{
                     display: "flex",
                     alignItems: "flex-start",
                     gap: 8,
-                    color: "rgba(255,255,255,0.65)",
+                    color: "rgba(224,250,249,0.65)",
                     fontSize: 13,
                     marginBottom: 7,
                     lineHeight: 1.5,
                   }}>
-                    <span style={{ color: "var(--accent)", flexShrink: 0, marginTop: 1 }}>▸</span>
+                    <span style={{ color: "var(--cta)", flexShrink: 0, marginTop: 1 }}>▸</span>
                     {f}
                   </li>
                 ))}
               </ul>
 
-              {/* Tech tags */}
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 22 }}>
                 {project.tech.map((t) => (
                   <span key={t} style={{
-                    border: "1px solid rgba(59,130,246,0.4)",
-                    color: "var(--highlight)",
+                    border: "1px solid var(--card-border)",
+                    color: "var(--cta)",
                     borderRadius: 999,
                     padding: "3px 10px",
                     fontSize: 11,
                     fontWeight: 600,
-                    background: "rgba(59,130,246,0.12)",
+                    background: "rgba(18,203,192,0.1)",
                   }}>
                     {t}
                   </span>
                 ))}
               </div>
 
-              {/* Buttons */}
               <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
                 <a
                   href={project.github}
@@ -360,24 +343,22 @@ export default function Projects() {
                   style={{
                     display: "inline-flex", alignItems: "center", gap: 6,
                     padding: "8px 18px", borderRadius: 999,
-                    border: "1px solid var(--accent)", color: "var(--accent)",
+                    border: "1px solid var(--cta)", color: "var(--cta)",
                     fontSize: 13, fontWeight: 600, textDecoration: "none",
                     background: "transparent", transition: "background 0.2s, color 0.2s",
                   }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "var(--accent)"; (e.currentTarget as HTMLAnchorElement).style.color = "#0A0F1E"; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; (e.currentTarget as HTMLAnchorElement).style.color = "var(--accent)"; }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = "var(--cta)"; (e.currentTarget as HTMLAnchorElement).style.color = "var(--bg-primary)"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; (e.currentTarget as HTMLAnchorElement).style.color = "var(--cta)"; }}
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
                   </svg>
                   GitHub
                 </a>
-
               </div>
             </div>
           )}
 
-          {/* Bottom gradient for nav readability */}
           <div style={{
             position: "absolute",
             bottom: 0, left: 0, right: 0,
@@ -388,14 +369,7 @@ export default function Projects() {
           }} />
         </div>
 
-        {/* Navigation */}
-        <div style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 20,
-          marginTop: 24,
-        }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 20, marginTop: 24 }}>
           <button
             onClick={() => navigate("prev")}
             style={{
@@ -405,7 +379,7 @@ export default function Projects() {
               justifyContent: "center", cursor: "pointer",
               transition: "background 0.2s, transform 0.2s, border-color 0.2s", flexShrink: 0,
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "rgba(59,130,246,0.1)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--accent)"; (e.currentTarget as HTMLButtonElement).style.transform = "scale(1.08)"; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "rgba(18,203,192,0.1)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--cta)"; (e.currentTarget as HTMLButtonElement).style.transform = "scale(1.08)"; }}
             onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "var(--bg-card)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--card-border)"; (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"; }}
             aria-label="Previous project"
           >
@@ -421,7 +395,7 @@ export default function Projects() {
                 onClick={() => goTo(i)}
                 style={{
                   width: i === current ? 28 : 8, height: 8, borderRadius: 999,
-                  background: i === current ? "var(--accent)" : "var(--border-color)",
+                  background: i === current ? "var(--cta)" : "var(--border-color)",
                   border: "none", cursor: "pointer", padding: 0,
                   transition: "width 0.3s ease, background 0.3s ease",
                 }}
@@ -439,7 +413,7 @@ export default function Projects() {
               justifyContent: "center", cursor: "pointer",
               transition: "background 0.2s, transform 0.2s, border-color 0.2s", flexShrink: 0,
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "rgba(59,130,246,0.1)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--accent)"; (e.currentTarget as HTMLButtonElement).style.transform = "scale(1.08)"; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = "rgba(18,203,192,0.1)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--cta)"; (e.currentTarget as HTMLButtonElement).style.transform = "scale(1.08)"; }}
             onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = "var(--bg-card)"; (e.currentTarget as HTMLButtonElement).style.borderColor = "var(--card-border)"; (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)"; }}
             aria-label="Next project"
           >

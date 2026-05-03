@@ -46,18 +46,18 @@ export default function Navbar() {
 
   const frontFaceStyle = (id: string): React.CSSProperties => ({
     position: "absolute", inset: 0, backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", display: "flex", alignItems: "center", justifyContent: "center",
-    background: activeSection === id ? "rgba(19,221,209,0.1)" : "rgba(19,221,209,0.04)",
-    border: activeSection === id ? "1px solid rgba(19,221,209,0.5)" : "1px solid rgba(19,221,209,0.12)",
-    borderRadius: 12, color: "#13ddd1", transition: "background 0.3s, border 0.3s",
+    background: activeSection === id ? "rgba(18,203,192,0.12)" : "rgba(18,203,192,0.04)",
+    border: activeSection === id ? "1px solid rgba(18,203,192,0.5)" : "1px solid rgba(18,203,192,0.12)",
+    borderRadius: 12, color: "var(--cta)", transition: "background 0.3s, border 0.3s",
   });
 
   const backFaceStyle: React.CSSProperties = {
     position: "absolute", inset: 0, backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", transform: "rotateX(180deg)", display: "flex", alignItems: "center", justifyContent: "center",
-    background: "linear-gradient(135deg, #13ddd1, #0fa89e)", borderRadius: 12, color: "#050a0a", fontSize, fontWeight: 700, letterSpacing: "0.5px", whiteSpace: "nowrap", padding: "0 6px",
+    background: "linear-gradient(135deg, var(--cta), var(--cta-hover))", borderRadius: 12, color: "var(--bg-primary)", fontSize, fontWeight: 700, letterSpacing: "0.5px", whiteSpace: "nowrap", padding: "0 6px",
   };
 
   return (
-    <nav style={{ position: "fixed", top: 20, left: "50%", transform: "translateX(-50%)", zIndex: 100, display: "flex", flexDirection: "row", alignItems: "center", gap, padding, background: "rgba(5,10,10,0.8)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", borderRadius: 999, border: "1px solid rgba(19,221,209,0.15)", boxShadow: "0 8px 32px rgba(0,0,0,0.5)" }}>
+    <nav style={{ position: "fixed", top: 20, left: "50%", transform: "translateX(-50%)", zIndex: 100, display: "flex", flexDirection: "row", alignItems: "center", gap, padding, background: "rgba(11,18,18,0.85)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", borderRadius: 999, border: "1px solid rgba(18,203,192,0.15)", boxShadow: "0 8px 32px rgba(0,0,0,0.5)" }}>
       {navLinks.map(({ id, label, icon }) => (
         <div key={id} style={{ width: btnW, height: btnH, perspective: 600, cursor: "pointer" }} onMouseEnter={() => setHovered(id)} onMouseLeave={() => setHovered(null)} onClick={() => scrollTo(id)}>
           <div style={{ width: "100%", height: "100%", position: "relative", transformStyle: "preserve-3d", transition: "transform 0.5s cubic-bezier(0.23,1,0.32,1)", transform: hovered === id ? "rotateX(180deg)" : "rotateX(0deg)", borderRadius: 12 }}>
@@ -66,10 +66,10 @@ export default function Navbar() {
           </div>
         </div>
       ))}
-      <div style={{ width: 1, height: 28, background: "rgba(19,221,209,0.15)", alignSelf: "center", margin: "0 4px", flexShrink: 0 }} />
+      <div style={{ width: 1, height: 28, background: "rgba(18,203,192,0.15)", alignSelf: "center", margin: "0 4px", flexShrink: 0 }} />
       <div style={{ width: btnW, height: btnH, perspective: 600, cursor: "pointer" }} onMouseEnter={() => setHovered("theme")} onMouseLeave={() => setHovered(null)} onClick={toggle}>
         <div style={{ width: "100%", height: "100%", position: "relative", transformStyle: "preserve-3d", transition: "transform 0.5s cubic-bezier(0.23,1,0.32,1)", transform: hovered === "theme" ? "rotateX(180deg)" : "rotateX(0deg)", borderRadius: 12 }}>
-          <div style={{ position: "absolute", inset: 0, backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(19,221,209,0.04)", border: "1px solid rgba(19,221,209,0.12)", borderRadius: 12, color: "#13ddd1" }}>
+          <div style={{ position: "absolute", inset: 0, backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", display: "flex", alignItems: "center", justifyContent: "center", background: "rgba(18,203,192,0.04)", border: "1px solid rgba(18,203,192,0.12)", borderRadius: 12, color: "var(--cta)" }}>
             {theme === "dark" ? <SunIcon /> : <MoonIcon />}
           </div>
           <div style={backFaceStyle}>Theme</div>
