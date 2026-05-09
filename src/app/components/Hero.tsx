@@ -161,8 +161,8 @@ export default function Hero() {
                 Contact Me
               </button>
               <a
-                href="/Y.M_Yeshika_Bandara.pdf"
-                download="Y.M_Yeshika_Bandara.pdf"
+                href="/Y.M_Yeshika_B._Bandara_.pdf"
+                download="Y.M_Yeshika_B._Bandara_.pdf"
                 className="flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all hover:scale-105"
                 style={{ color: "var(--text-primary)", border: "1px solid var(--border-color)", background: "rgba(18,203,192,0.1)", backdropFilter: "blur(8px)" }}
               >
