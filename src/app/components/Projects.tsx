@@ -258,7 +258,7 @@ export default function Projects() {
 
           <div style={{ position: "absolute", top: 20, left: 24, zIndex: 3 }}>
             <h3 style={{
-              color: "var(--bg-primary)",
+              color: project.video ? "#ffffff" : "var(--cta)",
               fontSize: isMobile ? 16 : 20,
               fontWeight: 700,
               margin: 0,
